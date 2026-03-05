@@ -1,0 +1,19 @@
+remote_theme: just-the-docs/just-the-docs
+
+title: BatchGen Image with AI
+description: Documentation for BatchGen Image with AI — batch image generation powered by AI.
+
+color_scheme: light
+
+nav_sort: order
+
+logo: "https://3thousand30.github.io/batchgenimage-docs/assets/images/logo.png"
+
+aux_links:
+  "Get on Microsoft Store": "https://apps.microsoft.com/detail/TODO"
+
+aux_links_new_tab: true
+
+footer_content: >
+  &copy; 2026 <a href="https://3thousand30.com">3thousand30</a> &mdash;
+  <a href="https://github.com/3thousand30/batchgenimage-docs/issues">Support</a>
