@@ -8,9 +8,9 @@ nav_order: 1
 
 **BatchGen Image with AI** is a Windows desktop app by [3thousand30](https://3thousand30.com) for generating batches of AI images from a simple spreadsheet — posters, social media graphics, book covers, product shots, album art, and more.
 
-You bring your own OpenAI API key (BYOK). The app connects directly to DALL-E 3 via your account — no middleman, no subscription, no data stored anywhere except your own machine.
+You bring your own API key (BYOK). The app connects directly to your chosen AI provider — no middleman, no subscription, no data stored anywhere except your own machine.
 
-[Get it on Microsoft Store](https://apps.microsoft.com/detail/TODO){: .btn .btn-blue }
+[Get it on Microsoft Store](https://apps.microsoft.com/detail/9PFR4V6827XQ){: .btn .btn-blue }
 
 ---
 
@@ -19,21 +19,23 @@ You bring your own OpenAI API key (BYOK). The app connects directly to DALL-E 3 
 1. **Configure your persona** — define the visual style and artistic direction applied to all images
 2. **Load sample prompts** _(optional)_ — style references that help the AI stay consistent with your aesthetic
 3. **Prepare your image list** — a simple CSV or YAML file with one row per image
-4. **Generate** — the app sends each item to DALL-E 3 and saves the output to a timestamped folder
+4. **Generate** — the app sends each item to your AI provider and saves the output to a timestamped folder
 
-A batch of 20 images takes a few minutes. Output lands in your Documents folder, ready to use.
+A batch of 20 images takes a few minutes. Output lands in your chosen folder, ready to use.
 
 ---
 
 ## Key features
 
-- **DALL-E 3 quality** — Standard ($0.040/image) or HD ($0.080/image) quality per template
-- **6 built-in templates** — Poster, Social Media, Banner, Book Cover, Product, Album Art, plus a fully editable Custom template
-- **Visual personas** — define artistic style, composition guidelines, and a quality bar that applies across every image in a batch
-- **Caption support** — include user-supplied text that the AI renders visibly in the image
+- **Multiple AI providers** — OpenAI DALL-E 3, Fireworks AI (FLUX, SDXL), and any OpenAI-compatible image endpoint
+- **7 built-in templates** — Poster, Social Media Post, Banner/Cover, Book Cover, Product Mockup, Album Art, and a fully editable Custom template
+- **Visual personas** — define artistic style, composition guidelines, and a quality bar applied to every image in a batch
+- **18 content styles** — Photorealistic, Cinematic, Watercolor, Oil Painting, Anime, Pixel Art, and more
+- **Caption overlay** — render visible text directly onto images, with control over position, font, and size
+- **Black & White mode** — convert all outputs to monochrome in one toggle
 - **Prompt preview** — review the assembled prompt for the first few items before spending anything
 - **Cost estimate** — see the estimated total cost before you generate
-- **Secure API key storage** — keys are encrypted on-device using Windows DPAPI, never transmitted anywhere except directly to OpenAI
+- **Secure API key storage** — keys are encrypted on-device using Windows DPAPI, never transmitted anywhere except directly to your chosen provider
 
 ---
 
@@ -41,6 +43,7 @@ A batch of 20 images takes a few minutes. Output lands in your Documents folder,
 
 - [Getting Started](getting-started) — install, configure, and run your first batch
 - [Choosing an AI Provider](choosing-a-provider) — supported providers and how to get an API key
+- [Captions](captions) — adding text overlays to your images
 - [Troubleshooting](troubleshooting) — common errors and how to fix them
 
 ---

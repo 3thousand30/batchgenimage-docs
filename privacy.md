@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Privacy Policy
-nav_order: 5
+nav_order: 6
 ---
 
 # Privacy Policy
@@ -25,7 +25,7 @@ BatchGen Image with AI is developed by [3thousand30](https://3thousand30.com).
 
 ## What leaves your machine
 
-When you generate images, the app sends your prompts (assembled from your image list, persona, and template settings) directly to **OpenAI** or whichever AI provider you configure. This is the core function of the app.
+When you generate images, the app sends your prompts (assembled from your image list, persona, and template settings) directly to whichever AI provider you configure. This is the core function of the app.
 
 Your API key is transmitted to your chosen provider as an authentication credential. It is stored on your device only, encrypted using Windows DPAPI (the operating system's built-in secure storage). It is never sent anywhere else.
 
@@ -49,6 +49,8 @@ When you use this app, you are subject to the privacy policy of whichever AI pro
 
 - [OpenAI Privacy Policy](https://openai.com/privacy/)
 - [Fireworks AI Privacy Policy](https://fireworks.ai/privacy-policy)
+- [OpenRouter Privacy Policy](https://openrouter.ai/privacy)
+- [Together AI Privacy Policy](https://www.together.ai/privacy)
 
 ---
 
