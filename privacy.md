@@ -6,7 +6,7 @@ nav_order: 6
 
 # Privacy Policy
 
-**Last updated: March 2026**
+**Last updated: April 2026**
 
 BatchGen Image with AI is developed by [3thousand30](https://3thousand30.com).
 
@@ -14,22 +14,26 @@ BatchGen Image with AI is developed by [3thousand30](https://3thousand30.com).
 
 ## What we collect
 
-**Nothing.** 3thousand30 does not collect, store, transmit, or have access to any personal data from users of this app.
+3thousand30 does not collect, store, or receive your prompts, generated images, filenames, folders, or saved configuration through our own servers.
 
-- No analytics
-- No telemetry
+- No analytics sent to us
+- No telemetry sent to us
 - No crash reporting sent to us
 - No account or registration required
 
 ---
 
-## What leaves your machine
+## What may leave your device
 
-When you generate images, the app sends your prompts (assembled from your image list, persona, and template settings) directly to whichever AI provider you configure. This is the core function of the app.
+When you generate images, the app sends your prompts and related generation settings directly to the **AI provider you configure**. This is the core function of the app.
 
-Your API key is transmitted to your chosen provider as an authentication credential. It is stored on your device only, encrypted using Windows DPAPI (the operating system's built-in secure storage). It is never sent anywhere else.
+Your API key is transmitted to your chosen provider as an authentication credential. It is stored on your device only, encrypted using Windows DPAPI. It is never sent anywhere else by us.
 
-3thousand30 has no visibility into these requests.
+The app may also request the **Inter** user-interface font from **Google Fonts** so the app looks consistent across devices. That font request is made directly from your device to Google's servers and may include standard network information such as your IP address and browser or app request metadata, subject to Google's own privacy practices.
+
+If Google Fonts is unavailable, the app can fall back to local system fonts.
+
+3thousand30 does not receive your prompt content or generated images except through the AI provider you intentionally use, and we do not receive the contents of those Google font requests.
 
 ---
 
@@ -39,7 +43,7 @@ Your API key is transmitted to your chosen provider as an authentication credent
 - Your API key — stored in encrypted form via Windows secure storage
 - Generated images — written to the folder you choose
 
-None of this data leaves your machine except as described above (AI provider API calls).
+This information remains on your device unless you choose to send prompts to an AI provider or otherwise share it.
 
 ---
 

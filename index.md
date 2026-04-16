@@ -8,7 +8,7 @@ nav_order: 1
 
 **BatchGen Image with AI** is a Windows desktop app by [3thousand30](https://3thousand30.com) for generating batches of AI images from a simple spreadsheet — posters, social media graphics, book covers, product shots, album art, and more.
 
-You bring your own API key (BYOK). The app connects directly to your chosen AI provider — no middleman, no subscription, no data stored anywhere except your own machine.
+You bring your own API key (BYOK). The app connects directly to your chosen AI provider — no middleman, no subscription, and no file storage operated by us.
 
 [Get it on Microsoft Store](https://apps.microsoft.com/detail/9PFR4V6827XQ){: .btn .btn-blue }
 
@@ -21,7 +21,7 @@ You bring your own API key (BYOK). The app connects directly to your chosen AI p
 3. **Prepare your image list** — a simple CSV or YAML file with one row per image
 4. **Generate** — the app sends each item to your AI provider and saves the output to a timestamped folder
 
-A batch of 20 images takes a few minutes. Output lands in your chosen folder, ready to use.
+A batch of 20 images takes a few minutes. Output lands in your chosen folder, ready to use. The app may also request the Inter UI font from Google Fonts for display consistency when an internet connection is available.
 
 ---
 
