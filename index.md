@@ -4,11 +4,11 @@ title: Home
 nav_order: 1
 ---
 
-# BatchGen Image with AI
+# Batch Generate Image with any AI
 
-**BatchGen Image with AI** is a Windows desktop app by [3thousand30](https://3thousand30.com) for generating batches of AI images from a simple spreadsheet — posters, social media graphics, book covers, product shots, album art, and more.
+**Batch Generate Image with any AI** is a lightweight Windows desktop app by [3thousand30](https://3thousand30.com) for generating batches of AI images from a simple image list — posters, social media graphics, book illustrations, invitations, product shots, album art, and more.
 
-You bring your own API key (BYOK). The app connects directly to your chosen AI provider — no middleman, no subscription, and no file storage operated by us.
+You bring your own API key (BYOK). The app connects directly to your chosen AI provider, saves outputs locally to your PC, and does not run a subscription cloud in the middle.
 
 [Get it on Microsoft Store](https://apps.microsoft.com/detail/9PFR4V6827XQ){: .btn .btn-blue }
 
@@ -16,33 +16,35 @@ You bring your own API key (BYOK). The app connects directly to your chosen AI p
 
 ## How it works
 
-1. **Configure your persona** — define the visual style and artistic direction applied to all images
-2. **Load sample prompts** _(optional)_ — style references that help the AI stay consistent with your aesthetic
-3. **Prepare your image list** — a simple CSV or YAML file with one row per image
-4. **Generate** — the app sends each item to your AI provider and saves the output to a timestamped folder
+1. **Configure your persona** — define the visual direction applied to the whole batch
+2. **Load style references** _(optional)_ — pick a folder and click **Analyze** to extract shared visual cues
+3. **Prepare your image list** — load a CSV or YAML file, or generate a CSV inside the app
+4. **Generate** — preview the prompt, choose the template and output folder, then save the full batch locally
 
-A batch of 20 images takes a few minutes. Output lands in your chosen folder, ready to use. The app may also request the Inter UI font from Google Fonts for display consistency when an internet connection is available.
+The app is built for repeatable image work, not one prompt at a time.
 
 ---
 
 ## Key features
 
-- **Multiple AI providers** — OpenAI DALL-E 3, Fireworks AI (FLUX, SDXL), and any OpenAI-compatible image endpoint
-- **7 built-in templates** — Poster, Social Media Post, Banner/Cover, Book Cover, Product Mockup, Album Art, and a fully editable Custom template
-- **Visual personas** — define artistic style, composition guidelines, and a quality bar applied to every image in a batch
-- **18 content styles** — Photorealistic, Cinematic, Watercolor, Oil Painting, Anime, Pixel Art, and more
-- **Caption overlay** — render visible text directly onto images, with control over position, font, and size
-- **Black & White mode** — convert all outputs to monochrome in one toggle
-- **Prompt preview** — review the assembled prompt for the first few items before spending anything
-- **Cost estimate** — see the estimated total cost before you generate
-- **Secure API key storage** — keys are encrypted on-device using Windows DPAPI, never transmitted anywhere except directly to your chosen provider
+- **Multiple AI connections** — save up to 10 named connections and switch the active one any time
+- **5 provider presets plus custom endpoint support** — OpenAI, OpenRouter, Together AI, Fireworks AI, and Custom (OpenAI-compatible)
+- **12 built-in templates** — Poster, Social Media Post, Banner / Cover, Book Cover, Book Illustration Page, Children's Book Illustration, Storybook Spread, Coloring Book Page, Invitation, Product Mockup, Album Art, and Custom
+- **24 content styles** — from Photorealistic and Cinematic to Storybook, Editorial, Invitation, Vector / Flat, and Coloring Book Line Art
+- **Visual personas** — reusable artistic direction with goals, rules, quality guidance, and 10 visual datapoints
+- **Sample analysis** — analyze a folder of your own images and let the app suggest persona settings
+- **Style-reference analysis** — compare a reference folder against the active persona before you generate
+- **AI CSV generation** — create image-list CSVs inside the app, including optional AI-written caption fields
+- **Caption overlays** — render visible text onto generated images with local preview and layout controls
+- **Prompt preview** — review the assembled prompt for the first few rows before spending anything
+- **Secure local storage** — API keys are encrypted on-device with Windows DPAPI
 
 ---
 
 ## Documentation
 
 - [Getting Started](getting-started) — install, configure, and run your first batch
-- [Choosing an AI Provider](choosing-a-provider) — supported providers and how to get an API key
+- [Choosing an AI Provider](choosing-a-provider) — provider guidance and model compatibility notes
 - [Captions](captions) — adding text overlays to your images
 - [Troubleshooting](troubleshooting) — common errors and how to fix them
 

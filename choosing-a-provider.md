@@ -6,7 +6,7 @@ nav_order: 3
 
 # Choosing an AI Provider
 
-BatchGen Image supports multiple AI image providers. You connect with your own API key — the app sends requests directly to your chosen provider.
+Batch Generate Image with any AI connects directly to your own provider. You bring the API key, choose the model, and the app sends requests straight to that provider.
 
 ---
 
@@ -14,103 +14,148 @@ BatchGen Image supports multiple AI image providers. You connect with your own A
 
 | Goal | Best choice |
 |---|---|
-| Best quality | OpenAI DALL-E 3 (HD) |
-| Cheapest | Fireworks AI (FLUX Schnell) |
-| Free tier available | Fireworks AI |
-| Portrait / landscape sizes | OpenAI or Fireworks SDXL |
-| Custom / local endpoint | OpenAI-Compatible |
+| Easiest first run | OpenAI |
+| One key for many model families | OpenRouter |
+| Lower-cost open-source image models | Fireworks AI or Together AI |
+| Reference analysis and sample analysis | OpenAI or OpenRouter |
+| Custom or self-hosted endpoint | Custom (OpenAI-compatible) |
 
 ---
 
-## Supported providers
+## Supported provider presets
 
-| Provider | Image models | Sign up |
+The current app ships with these built-in provider presets:
+
+| Provider | Typical use | Sign up |
 |---|---|---|
-| **OpenAI** | DALL-E 3 | [platform.openai.com](https://platform.openai.com) |
-| **Fireworks AI** | FLUX.1 Schnell FP8, FLUX.1 Dev FP8, SDXL | [fireworks.ai](https://fireworks.ai) |
-| **OpenRouter** | Various (model-dependent) | [openrouter.ai](https://openrouter.ai) |
-| **Together AI** | Stable Diffusion XL and others | [api.together.xyz](https://api.together.xyz) |
-| **Custom** | Any OpenAI-compatible image endpoint | — |
+| **OpenAI** | Straightforward first-run image generation | [platform.openai.com](https://platform.openai.com) |
+| **OpenRouter** | One key for multiple model families | [openrouter.ai](https://openrouter.ai) |
+| **Together AI** | Open-source image models such as FLUX and SDXL variants | [api.together.xyz](https://api.together.xyz) |
+| **Fireworks AI** | Fast FLUX and SDXL-style image workflows | [fireworks.ai](https://fireworks.ai) |
+| **Custom (OpenAI-compatible)** | Your own compatible endpoint | — |
+
+You can save up to 10 named connections and switch the active one at any time.
 
 ---
 
 ## OpenAI
 
-The default provider. Supports full DALL-E 3 quality with Standard and HD tiers.
+OpenAI is the smoothest place to start if you want the fewest moving parts.
 
-**Pricing:**
+Typical use:
 
-| Quality | Price per image |
-|---|---|
-| Standard | $0.040 |
-| HD | $0.080 |
+- DALL-E 3 or `gpt-image-1` for final image generation
+- automatic fallback to `gpt-4o-mini` for reference analysis or sample analysis when your image model is image-only
 
-**Standard** is fine for social media graphics, web images, and drafts. **HD** is better for print, book covers, and hero images where detail matters.
+OpenAI works well when you want:
 
-**Getting your API key:**
-
-1. Go to [platform.openai.com](https://platform.openai.com) and create an account
-2. Add a payment method under **Billing**
-3. Go to **API keys** and click **Create new secret key**
-4. Copy the key and paste it into the app via the key icon
-
-> OpenAI gives new accounts some free credits to start with. Once those run out, billing is pay-as-you-go.
-
-**Supported sizes:** 1024×1024, 1024×1792 (portrait), 1792×1024 (landscape)
-
----
-
-## Fireworks AI
-
-Faster and cheaper than OpenAI for most use cases. Offers FLUX and SDXL models.
-
-**Models:**
-
-| Model | Notes |
-|---|---|
-| `flux-1-schnell-fp8` | Fastest and cheapest. Good for drafts and large batches. |
-| `flux-1-dev-fp8` | Higher quality than Schnell, slower. |
-| SDXL models | Supports portrait and landscape orientations (768×1344). |
-
-> **Note:** FLUX models only generate at 1024×1024 (square). For portrait or landscape outputs, use an SDXL model with Fireworks.
-
-**Getting started with Fireworks:**
-
-1. Sign up at [fireworks.ai](https://fireworks.ai) and get an API key
-2. In the app, click the key icon and select **Fireworks AI**
-3. Paste your API key and click **Test**
+- reliable first-run setup
+- strong portrait and landscape support
+- Step 2 reference analysis
+- persona sample analysis
 
 ---
 
 ## OpenRouter
 
-OpenRouter routes to 100+ models from a single API key. Image model availability depends on which models OpenRouter carries at a given time.
+OpenRouter is useful when you want one key across multiple providers or model families.
 
-Set the model field to the full OpenRouter model ID, e.g. `openai/dall-e-3`.
+Typical use:
+
+- image generation with model IDs such as FLUX or Gemini image models
+- reference analysis or sample analysis using a vision-capable chat model
+
+Important behavior:
+
+- if your active OpenRouter generation model looks image-only, the app can use `openai/gpt-4o-mini` for reference analysis and sample analysis
+- AI CSV generation does **not** use that fallback automatically
+
+That means OpenRouter can be a strong all-around option, but for the **Generate CSV** dialog you should still switch to a chat-capable model if you want AI-written rows and captions.
 
 ---
 
 ## Together AI
 
-Together AI hosts Stable Diffusion XL and other open-source image models. Pricing is per-image and generally lower than OpenAI.
+Together AI is a good option for open-source image models and lower-cost experimentation.
 
-Use model IDs from their documentation, e.g. `stabilityai/stable-diffusion-xl-base-1.0`.
+Use full Together model IDs, for example:
+
+```text
+black-forest-labs/FLUX.1-schnell-Free
+```
+
+Together AI is mainly useful here for **final image generation**. If your configured model is image-only, Step 2 reference analysis and persona sample analysis will not be available from that setup.
+
+---
+
+## Fireworks AI
+
+Fireworks AI is useful for fast FLUX-style generation and SDXL-style workflows.
+
+Typical patterns:
+
+- FLUX models for fast square generations
+- SDXL-style models when you need other aspect ratios
+
+Important current limitation:
+
+- in the current app, Fireworks connections do **not** support Step 2 reference analysis
+- Fireworks connections also do **not** support persona sample analysis
+
+Use Fireworks when you mainly want final image output and do not need the analysis features on that connection.
 
 ---
 
 ## Custom (OpenAI-compatible)
 
-Select **Custom (OpenAI-Compatible)** to connect to any endpoint that supports the OpenAI `/images/generations` API format.
+Choose **Custom (OpenAI-compatible)** if you want to point the app at your own compatible endpoint.
 
 Examples:
-- A locally hosted model via [ComfyUI](https://github.com/comfyanonymous/ComfyUI) with an OpenAI-compatible wrapper
-- A self-hosted image generation server
-- Azure OpenAI with DALL-E deployment
 
-Enter the base URL (e.g. `http://localhost:7860/v1`) in the Base URL field.
+- a self-hosted image generation service
+- a local wrapper around another image backend
+- a compatible enterprise endpoint
+
+For final image generation, the endpoint needs to support an OpenAI-style image generation route.
+
+For analysis or AI CSV writing, the endpoint also needs compatible chat or vision capability. If it only exposes image generation, those helper features will not work.
 
 ---
 
-## Switching providers
+## Image generation vs analysis vs AI CSV writing
 
-You can switch providers at any time from the key icon. Each API key is saved separately per provider — switching does not delete previously saved keys.
+These are three separate capabilities in the app:
+
+1. **Image generation** — creates the final images
+2. **Reference or sample analysis** — inspects folders of images and summarizes visual cues
+3. **AI CSV generation** — writes image-list rows using a chat completion call
+
+This matters because some models only do the first job well.
+
+Example:
+
+- FLUX is often great for final image generation
+- but FLUX by itself cannot inspect reference folders
+- and FLUX by itself cannot write AI CSV rows through the chat-based CSV helper
+
+So if you want **all** features in one workflow:
+
+- use OpenAI or OpenRouter for reference analysis and sample analysis
+- use a chat-capable model for AI CSV generation
+- use an image model for the final batch generation
+
+Many users keep multiple saved connections for exactly this reason.
+
+---
+
+## Switching connections
+
+Each saved connection stores its own provider, model, base URL, and API key.
+
+You can:
+
+- create separate connections for different jobs
+- test them independently
+- switch the active connection without re-entering old keys
+
+This is the easiest way to keep one setup for high-quality image generation, another for cheaper bulk runs, and another for chat-based helper tasks such as AI CSV writing.

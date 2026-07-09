@@ -1,20 +1,25 @@
-# BatchGen Image with AI — Documentation
+# Batch Generate Image with any AI — Documentation
 
-Official documentation for [BatchGen Image with AI](https://3thousand30.com/batchgen-image.html), a bulk AI image generation tool for Windows by [3thousand30](https://3thousand30.com).
+Official documentation for [Batch Generate Image with any AI](https://3thousand30.com/batchgen-image.html), a lightweight Windows batch image generator by [3thousand30](https://3thousand30.com).
 
-## What is BatchGen Image?
+## What is Batch Generate Image with any AI?
 
-BatchGen Image lets you generate batches of AI images — poster art, book covers, social media visuals, album artwork, and more — using your own AI API key. You choose the provider and model. No subscription, no cloud storage, no account required. Your files stay on your machine.
+Batch Generate Image with any AI helps you create batches of posters, social visuals, book illustrations, invitations, product mockups, album art, and other image sets using your own AI provider and API key.
+
+You choose the provider and model. The app saves outputs locally to your PC. No subscription, no 3thousand30 cloud storage, no account required with us.
 
 ## Key features
 
-- **BYOKey** — bring your own API key, pay the provider directly
-- **Batch generation** from CSV caption lists
-- **Multiple AI providers** — OpenAI, Fireworks, OpenRouter, Together AI, and custom endpoints
-- **Caption system** for structured prompt control
-- **Poster, book cover, social media, and album presets**
-- **API keys encrypted locally** via Windows DPAPI
-- **Fully local** — no cloud, no telemetry, no account
+- **Bring your own API key** — pay the provider directly
+- **Batch generation** from CSV or YAML image lists
+- **Built-in CSV generator** with optional AI-written caption fields
+- **Multiple saved AI connections** for different providers and models
+- **Persona system** with reusable artistic direction and 10 datapoints
+- **Reference analysis** and **sample analysis** for stronger style control
+- **Caption overlays** with local preview and layout options
+- **Multiple built-in templates and content styles**
+- **API keys encrypted locally** with Windows DPAPI
+- **Local-first workflow** — outputs stay on your machine
 
 ## Links
 
@@ -25,7 +30,7 @@ BatchGen Image lets you generate batches of AI images — poster art, book cover
 
 ## Privacy
 
-BatchGen Image does not collect, store, or transmit your images or prompts through 3thousand30 servers. Everything stays local. See the [privacy policy](https://3thousand30.github.io/batchgenimage-docs/privacy.html) for details.
+Batch Generate Image with any AI does not collect, store, or transmit your images or prompts through 3thousand30 servers. See the [privacy policy](https://3thousand30.github.io/batchgenimage-docs/privacy.html) for details.
 
 ---
 

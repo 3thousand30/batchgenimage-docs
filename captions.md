@@ -6,15 +6,17 @@ nav_order: 4
 
 # Captions
 
-The caption feature renders visible text directly onto generated images — useful for posters, banners, social media graphics, and book covers where the title or tagline needs to appear in the image itself.
+Captions render visible text directly onto generated images. This is useful for posters, banners, social media graphics, invitations, book covers, and other layouts where the headline or tagline should appear in the final image.
 
 ---
 
 ## Enabling captions
 
-In Step 3 (Generate), toggle **Include Captions** on. When enabled, any `caption` field in your image list will be composited onto the image after generation.
+In Step 3, turn **Include Captions** on.
 
-If an image row has no `caption` value, no overlay is applied — the image is saved as-is.
+When enabled, any row in your image list with a non-empty `caption` field will receive a text overlay after the image is generated.
+
+If a row has no caption value, that image is saved without an overlay.
 
 ---
 
@@ -29,50 +31,77 @@ title,description,caption
 "Team Photo","Studio portrait of creative team",
 ```
 
-Rows with an empty `caption` field generate normally without an overlay.
+Aliases also work:
 
-The `caption` field also accepts these aliases: `text`, `overlay`, `label`, `tagline`.
+- `text`
+- `overlay`
+- `label`
+- `tagline`
+
+Rows with an empty caption field generate normally without any text overlay.
+
+### Generate captions with the built-in CSV tool
+
+The **Generate CSV** dialog includes an **Add AI captions column** switch.
+
+When that is on, the app asks the AI to create a short `caption` value for each row so the file is ready for caption overlays.
+
+> **Model note:** AI CSV writing uses a chat-capable model. If your active connection is an image-only model like FLUX, switch to a chat-capable connection if you want AI-written caption fields. You can always type captions manually either way.
 
 ---
 
 ## Caption options
 
-When **Include Captions** is on, four additional controls appear:
+When **Include Captions** is on, these controls appear:
 
-**Position** — where the caption bar is placed on the image:
+**Font** — choose from the fonts installed on your Windows machine.
+
+**Size** — numeric font size in pixels.
+
+**Color** — caption text color.
+
+**Background** — choose `None`, `Dark`, or `Light` to place a rounded block behind the caption for readability.
+
+**Position** — where the caption is placed:
 
 | Option | Description |
 |---|---|
-| Bottom | Bar along the bottom edge (default) |
-| Top | Bar along the top edge |
-| Middle | Lower-third placement |
-| Diagonal | Angled band across the centre |
-| Mix (all) | Cycles through all four positions across the batch |
+| Bottom | Along the bottom edge |
+| Top | Along the top edge |
+| Middle | Centered placement |
+| Diagonal | Angled treatment across the image |
 
-**Font** — the typeface used for the caption text:
+**Text Align** — choose `Center` or `Left`.
 
-| Option | Typeface |
-|---|---|
-| Serif | Georgia — classic, editorial feel |
-| Sans-serif | Arial — clean and modern |
-| Impact | Impact — bold, poster-style |
+**Margin** — controls distance from the top or bottom edge.
 
-**Size** — font size relative to the image width:
+Important:
 
-| Option | Approximate size on 1024px image |
-|---|---|
-| Normal | ~32px |
-| Large | ~46px |
-| X-Large | ~64px |
+- Margin applies to `Top` and `Bottom`
+- `Middle` and `Diagonal` ignore margin by design
 
-**All variants** — saves four copies of each image, one per position (Bottom, Top, Middle, Diagonal). No extra API cost — the image is generated once and composited four times.
+**All variants** — save four captioned copies of each image, one per position. The image is generated once and composited locally four times, so there is no extra image-generation API cost.
 
-**Also save without caption** — saves an additional plain copy of each image alongside the captioned version. Useful when you want both versions.
+**Save without caption** — save an additional plain version of the image alongside the captioned one.
+
+---
+
+## Caption preview
+
+The app includes a caption preview card in Step 3 so you can check how the current font, size, background, and position look before running the full batch.
+
+If your image list already has captions, the preview uses the first non-empty one it finds. Otherwise it falls back to sample text.
 
 ---
 
 ## How it works
 
-After the AI generates each image, the app reads the caption field and composites an SVG text overlay using [sharp](https://sharp.pixelplumbing.com/). The bar colour (dark or light) is chosen automatically by sampling the luminance of the region the bar will cover — so white text appears on dark areas and dark text on light areas.
+Captions are added **after** the AI image is returned.
 
-The original API image is not modified. The captioned version is a new PNG written to your output folder.
+That means:
+
+- the image model still generates the base artwork
+- the app then composites the caption locally on your PC
+- the original API response is not modified on the provider side
+
+This is why caption overlays can still work even when your image model is image-only. The only part that needs a chat-capable model is **AI-writing** the caption text for the CSV generator.
