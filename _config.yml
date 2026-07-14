@@ -1,7 +1,7 @@
 remote_theme: just-the-docs/just-the-docs
 
-title: BatchGen Image with AI
-description: Documentation for BatchGen Image with AI — batch image generation powered by AI.
+title: Batch Generate Image with any AI
+description: Documentation for Batch Generate Image with any AI — batch image generation powered by AI.
 
 color_scheme: light
 
@@ -15,6 +15,6 @@ aux_links:
 aux_links_new_tab: true
 
 footer_content: >
-  &copy; 2026 <a href="https://3thousand30.com/batchgen-image.html">BatchGen Image with AI</a> by
+  &copy; 2026 <a href="https://3thousand30.com/batchgen-image.html">Batch Generate Image with any AI</a> by
   <a href="https://3thousand30.com">3thousand30</a> &mdash;
   <a href="https://github.com/3thousand30/batchgenimage-docs/issues">Support</a>

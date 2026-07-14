@@ -8,7 +8,7 @@ nav_order: 6
 
 **Last updated: April 2026**
 
-BatchGen Image with AI is developed by [3thousand30](https://3thousand30.com).
+Batch Generate Image with any AI is developed by [3thousand30](https://3thousand30.com).
 
 ---
 
